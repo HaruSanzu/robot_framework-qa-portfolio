@@ -1,108 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.5.1 (Python 3.13.7 on win32)" generated="2026-11-10T17:07:20.522944" rpa="false" schemaversion="5">
-<suite id="s1" name="Product Tests" source="C:\Users\haita\PycharmProjects\robot_framework_qa\tests\product_tests.robot">
-<test id="s1-t1" name="Verify Products" line="16">
-<kw name="Get Length" owner="BuiltIn">
-<msg time="2026-11-10T17:07:20.574246" level="INFO">Length is 3.</msg>
-<msg time="2026-11-10T17:07:20.574340" level="INFO">${count} = 3</msg>
-<var>${count}</var>
-<arg>${PRODUCTS}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2026-11-10T17:07:20.573717" elapsed="0.000647"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-11-10T17:07:20.574814" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${count}</arg>
-<arg>3</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-11-10T17:07:20.574579" elapsed="0.000297"/>
-</kw>
-<status status="PASS" start="2026-11-10T17:07:20.572821" elapsed="0.002215"/>
-</test>
-<test id="s1-t2" name="Verify Product Details" line="20">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-11-10T17:07:20.575778" level="INFO">${name} = gaming laptop</msg>
-<var>${name}</var>
-<arg>${PRODUCT}</arg>
-<arg>name</arg>
-<doc>Returns a value from the given `dictionary` based on the given `key`.</doc>
-<status status="PASS" start="2026-11-10T17:07:20.575648" elapsed="0.000150"/>
-</kw>
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-11-10T17:07:20.576052" level="INFO">${category} = electronics</msg>
-<var>${category}</var>
-<arg>${PRODUCT}</arg>
-<arg>category</arg>
-<doc>Returns a value from the given `dictionary` based on the given `key`.</doc>
-<status status="PASS" start="2026-11-10T17:07:20.575936" elapsed="0.000135"/>
+<robot generator="Robot 7.5.1 (Python 3.13.7 on win32)" generated="2026-11-10T17:29:46.976967" rpa="false" schemaversion="5">
+<suite id="s1" name="Product Availability" source="C:\Users\haita\PycharmProjects\robot_framework_qa\tests\product_availability.robot">
+<test id="s1-t1" name="Verify Product Availability" line="5">
+<kw name="Verify Product Availability">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-11-10T17:29:47.020483" level="INFO">Checking product: Laptop</msg>
+<arg>Checking product: ${product_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-11-10T17:29:47.020221" elapsed="0.000319"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<arg>${name}</arg>
-<arg>gaming laptop</arg>
+<arg>${actual_status}</arg>
+<arg>${expected_status}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-11-10T17:07:20.576217" elapsed="0.000205"/>
+<status status="PASS" start="2026-11-10T17:29:47.020665" elapsed="0.000225"/>
+</kw>
+<arg>Laptop</arg>
+<arg>In Stock</arg>
+<arg>In Stock</arg>
+<status status="PASS" start="2026-11-10T17:29:47.019706" elapsed="0.001239"/>
+</kw>
+<kw name="Verify Product Availability">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-11-10T17:29:47.021592" level="INFO">Checking product: Smartphone</msg>
+<arg>Checking product: ${product_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-11-10T17:29:47.021411" elapsed="0.000223"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<arg>${category}</arg>
-<arg>electronics</arg>
+<arg>${actual_status}</arg>
+<arg>${expected_status}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-11-10T17:07:20.576592" elapsed="0.000201"/>
+<status status="PASS" start="2026-11-10T17:29:47.021757" elapsed="0.000237"/>
 </kw>
-<status status="PASS" start="2026-11-10T17:07:20.575353" elapsed="0.001576"/>
-</test>
-<test id="s1-t3" name="Update Price Product" line="26">
-<kw name="Set To Dictionary" owner="Collections">
-<arg>${PRODUCT}</arg>
-<arg>price</arg>
-<arg>1200</arg>
-<doc>Adds the given `key_value_pairs` and/or `items` to the `dictionary`.</doc>
-<status status="PASS" start="2026-11-10T17:07:20.577366" elapsed="0.000164"/>
+<arg>Smartphone</arg>
+<arg>In Stock</arg>
+<arg>In Stock</arg>
+<status status="PASS" start="2026-11-10T17:29:47.021152" elapsed="0.000898"/>
 </kw>
-<kw name="Dictionary Should Contain Item" owner="Collections">
-<arg>${PRODUCT}</arg>
-<arg>price</arg>
-<arg>1200</arg>
-<doc>Fails is item `key` does not exist and have value `value`.</doc>
-<status status="PASS" start="2026-11-10T17:07:20.577671" elapsed="0.000115"/>
-</kw>
-<status status="PASS" start="2026-11-10T17:07:20.577149" elapsed="0.000766"/>
-</test>
-<test id="s1-t4" name="Verify Product Availability" line="30">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-11-10T17:07:20.578453" level="INFO">${availability} = in stock</msg>
-<var>${availability}</var>
-<arg>${PRODUCT}</arg>
-<arg>availability</arg>
-<doc>Returns a value from the given `dictionary` based on the given `key`.</doc>
-<status status="PASS" start="2026-11-10T17:07:20.578344" elapsed="0.000128"/>
+<kw name="Verify Product Availability">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-11-10T17:29:47.022679" level="INFO">Checking product: Headphones</msg>
+<arg>Checking product: ${product_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-11-10T17:29:47.022518" elapsed="0.000192"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<arg>${availability}</arg>
-<arg>in stock</arg>
+<arg>${actual_status}</arg>
+<arg>${expected_status}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-11-10T17:07:20.578620" elapsed="0.000184"/>
+<status status="PASS" start="2026-11-10T17:29:47.022798" elapsed="0.000173"/>
 </kw>
-<kw name="Dictionary Should Contain Key" owner="Collections">
-<arg>${PRODUCT}</arg>
-<arg>price</arg>
-<doc>Fails if `key` is not found from `dictionary`.</doc>
-<status status="PASS" start="2026-11-10T17:07:20.578960" elapsed="0.000127"/>
+<arg>Headphones</arg>
+<arg>Out of Stock</arg>
+<arg>Out of Stock</arg>
+<status status="PASS" start="2026-11-10T17:29:47.022229" elapsed="0.000782"/>
 </kw>
-<status status="PASS" start="2026-11-10T17:07:20.578135" elapsed="0.001087"/>
+<kw name="Verify Product Availability">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-11-10T17:29:47.023521" level="INFO">Checking product: Monitor</msg>
+<arg>Checking product: ${product_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-11-10T17:29:47.023372" elapsed="0.000182"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_status}</arg>
+<arg>${expected_status}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-11-10T17:29:47.023642" elapsed="0.000174"/>
+</kw>
+<arg>Monitor</arg>
+<arg>In Stock</arg>
+<arg>In Stock</arg>
+<status status="PASS" start="2026-11-10T17:29:47.023152" elapsed="0.000703"/>
+</kw>
+<kw name="Verify Product Availability">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-11-10T17:29:47.024356" level="INFO">Checking product: Keyboard</msg>
+<arg>Checking product: ${product_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-11-10T17:29:47.024211" elapsed="0.000174"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2026-11-10T17:29:47.024691" level="FAIL">Out of Stock != In Stock</msg>
+<arg>${actual_status}</arg>
+<arg>${expected_status}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2026-11-10T17:29:47.024470" elapsed="0.000348">Out of Stock != In Stock</status>
+</kw>
+<arg>Keyboard</arg>
+<arg>Out of Stock</arg>
+<arg>In Stock</arg>
+<status status="FAIL" start="2026-11-10T17:29:47.023995" elapsed="0.000912">Out of Stock != In Stock</status>
+</kw>
+<status status="FAIL" start="2026-11-10T17:29:47.019096" elapsed="0.006041">Out of Stock != In Stock</status>
 </test>
-<doc>Work with the Dictionaries and Lists</doc>
-<status status="PASS" start="2026-11-10T17:07:20.525009" elapsed="0.054567"/>
+<doc>practice in DDT</doc>
+<status status="FAIL" start="2026-11-10T17:29:46.978325" elapsed="0.047355"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Product Tests" id="s1" pass="4" fail="0" skip="0">Product Tests</stat>
+<stat name="Product Availability" id="s1" pass="0" fail="1" skip="0">Product Availability</stat>
 </suite>
 </statistics>
 <errors>
