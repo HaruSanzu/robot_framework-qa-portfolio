@@ -1,45 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.5.1 (Python 3.13.7 on win32)" generated="2026-11-09T19:19:15.272247" rpa="false" schemaversion="5">
-<suite id="s1" name="Keywords Ex" source="C:\Users\haita\PycharmProjects\robot_framework_qa\tests\keywords_ex.robot">
-<test id="s1-t1" name="Verify Full Name" line="12">
-<kw name="Get Full Name">
-<kw name="Catenate" owner="BuiltIn">
-<msg time="2026-11-09T19:19:15.313250" level="INFO">${full_name} = Adil Rose Saparkhan</msg>
-<var>${full_name}</var>
-<arg>SEPARATOR=${SPACE}</arg>
-<arg>${FIRST_NAME}</arg>
-<arg>${LAST_NAME}</arg>
-<doc>Concatenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2026-11-09T19:19:15.312912" elapsed="0.000372"/>
+<robot generator="Robot 7.5.1 (Python 3.13.7 on win32)" generated="2026-11-10T17:07:20.522944" rpa="false" schemaversion="5">
+<suite id="s1" name="Product Tests" source="C:\Users\haita\PycharmProjects\robot_framework_qa\tests\product_tests.robot">
+<test id="s1-t1" name="Verify Products" line="16">
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-11-10T17:07:20.574246" level="INFO">Length is 3.</msg>
+<msg time="2026-11-10T17:07:20.574340" level="INFO">${count} = 3</msg>
+<var>${count}</var>
+<arg>${PRODUCTS}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-11-10T17:07:20.573717" elapsed="0.000647"/>
 </kw>
-<return>
-<value>${full_name}</value>
-<status status="PASS" start="2026-11-09T19:19:15.313352" elapsed="0.000040"/>
-</return>
-<msg time="2026-11-09T19:19:15.313487" level="INFO">${full_name} = Adil Rose Saparkhan</msg>
-<var>${full_name}</var>
-<status status="PASS" start="2026-11-09T19:19:15.312507" elapsed="0.001000"/>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-11-10T17:07:20.574814" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>3</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-11-10T17:07:20.574579" elapsed="0.000297"/>
+</kw>
+<status status="PASS" start="2026-11-10T17:07:20.572821" elapsed="0.002215"/>
+</test>
+<test id="s1-t2" name="Verify Product Details" line="20">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-11-10T17:07:20.575778" level="INFO">${name} = gaming laptop</msg>
+<var>${name}</var>
+<arg>${PRODUCT}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given `dictionary` based on the given `key`.</doc>
+<status status="PASS" start="2026-11-10T17:07:20.575648" elapsed="0.000150"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-11-10T17:07:20.576052" level="INFO">${category} = electronics</msg>
+<var>${category}</var>
+<arg>${PRODUCT}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given `dictionary` based on the given `key`.</doc>
+<status status="PASS" start="2026-11-10T17:07:20.575936" elapsed="0.000135"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<msg time="2026-11-09T19:19:15.313987" level="FAIL">Adil Rose Saparkhan != Adil Saparkhan</msg>
-<arg>${full_name}</arg>
-<arg>${EXPECTED_MESSAGE}</arg>
+<arg>${name}</arg>
+<arg>gaming laptop</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="FAIL" start="2026-11-09T19:19:15.313693" elapsed="0.000415">Adil Rose Saparkhan != Adil Saparkhan</status>
+<status status="PASS" start="2026-11-10T17:07:20.576217" elapsed="0.000205"/>
 </kw>
-<status status="FAIL" start="2026-11-09T19:19:15.311938" elapsed="0.002374">Adil Rose Saparkhan != Adil Saparkhan</status>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${category}</arg>
+<arg>electronics</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-11-10T17:07:20.576592" elapsed="0.000201"/>
+</kw>
+<status status="PASS" start="2026-11-10T17:07:20.575353" elapsed="0.001576"/>
 </test>
-<doc>Variables and reusable keywords practice</doc>
-<status status="FAIL" start="2026-11-09T19:19:15.273764" elapsed="0.041086"/>
+<test id="s1-t3" name="Update Price Product" line="26">
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${PRODUCT}</arg>
+<arg>price</arg>
+<arg>1200</arg>
+<doc>Adds the given `key_value_pairs` and/or `items` to the `dictionary`.</doc>
+<status status="PASS" start="2026-11-10T17:07:20.577366" elapsed="0.000164"/>
+</kw>
+<kw name="Dictionary Should Contain Item" owner="Collections">
+<arg>${PRODUCT}</arg>
+<arg>price</arg>
+<arg>1200</arg>
+<doc>Fails is item `key` does not exist and have value `value`.</doc>
+<status status="PASS" start="2026-11-10T17:07:20.577671" elapsed="0.000115"/>
+</kw>
+<status status="PASS" start="2026-11-10T17:07:20.577149" elapsed="0.000766"/>
+</test>
+<test id="s1-t4" name="Verify Product Availability" line="30">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-11-10T17:07:20.578453" level="INFO">${availability} = in stock</msg>
+<var>${availability}</var>
+<arg>${PRODUCT}</arg>
+<arg>availability</arg>
+<doc>Returns a value from the given `dictionary` based on the given `key`.</doc>
+<status status="PASS" start="2026-11-10T17:07:20.578344" elapsed="0.000128"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${availability}</arg>
+<arg>in stock</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-11-10T17:07:20.578620" elapsed="0.000184"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${PRODUCT}</arg>
+<arg>price</arg>
+<doc>Fails if `key` is not found from `dictionary`.</doc>
+<status status="PASS" start="2026-11-10T17:07:20.578960" elapsed="0.000127"/>
+</kw>
+<status status="PASS" start="2026-11-10T17:07:20.578135" elapsed="0.001087"/>
+</test>
+<doc>Work with the Dictionaries and Lists</doc>
+<status status="PASS" start="2026-11-10T17:07:20.525009" elapsed="0.054567"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Keywords Ex" id="s1" pass="0" fail="1" skip="0">Keywords Ex</stat>
+<stat name="Product Tests" id="s1" pass="4" fail="0" skip="0">Product Tests</stat>
 </suite>
 </statistics>
 <errors>
